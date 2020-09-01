@@ -33,6 +33,23 @@ def encoders(self):
     return self._con.encoders
 
 
+#  postgresql
+@property
+def isolation_level(self):
+    return self._con.isolation_level
+
+
+def set_client_encoding(self, encoding):
+    return self._con.set_client_encoding(encoding)
+
+
+def get_parameter_status(self, parameter):
+    return self._con.get_parameter_status(parameter)
+
+
 setattr(SteadyDBConnection, "autocommit", autocommit)
 setattr(SteadyDBConnection, "get_server_info", get_server_info)
 setattr(SteadyDBConnection, "encoders", encoders)
+setattr(SteadyDBConnection, "isolation_level", isolation_level)
+setattr(SteadyDBConnection, "set_client_encoding", set_client_encoding)
+setattr(SteadyDBConnection, "get_parameter_status", get_parameter_status)

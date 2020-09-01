@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 
 try:
     from setuptools import setup
@@ -7,7 +8,10 @@ except ImportError:
 
 from setuptools import find_packages
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
+
+with open(os.path.join(os.path.dirname(__file__), 'README.md')) as f:
+    readme = f.read()
 
 setup(
     name='django-database-pool',
@@ -17,8 +21,9 @@ setup(
     license='MIT License',
     author='binwen',
     author_email='cwb201314@qq.com',
-    description='''通过DBUtils库实现Django数据库连接池，目前支持mysql、postgresql 数据库.''',
-    long_description=open('README.md').read(),
+    description='通过DBUtils库实现Django数据库连接池，目前支持mysql、postgresql 数据库.',
+    long_description=readme,
+    long_description_content_type="text/markdown",
     classifiers=[
         'Topic :: Database',
         'Development Status :: 3 - Alpha',
