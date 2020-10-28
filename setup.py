@@ -8,7 +8,7 @@ except ImportError:
 
 from setuptools import find_packages
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 with open(os.path.join(os.path.dirname(__file__), 'README.md')) as f:
     readme = f.read()
@@ -35,6 +35,7 @@ setup(
     ],
     install_requires=[
         'Django>=1.9.9',
-        'DBUtils>=1.3'
+        'DBUtils>=1.3',
+        'six'
     ]
 )

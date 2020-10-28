@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
-from DBUtils.PooledDB import PooledDB
-from DBUtils.SteadyDB import SteadyDBConnection
+try:
+    from DBUtils.PooledDB import PooledDB
+    from DBUtils.SteadyDB import SteadyDBConnection
+except ImportError:
+    from dbutils.pooled_db import PooledDB
+    from dbutils.steady_db import SteadyDBConnection
 
 
 class DBPoolWrapper(object):
